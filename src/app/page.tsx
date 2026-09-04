@@ -20,12 +20,12 @@ const LINKS = [
   },
   {
     href: "https://www.linkedin.com/in/alejandro-valadez",
-    label: "LinkedIn",
+    label: "Connect with me!",
     icon: Briefcase,
   },
   {
     href: "https://github.com/f1alej",
-    label: "GitHub",
+    label: "Check out my MCPs and Projects",
     icon: Code,
   },
   {
@@ -71,11 +71,11 @@ export default function Home() {
               rel="noopener"
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "h-12 justify-start gap-3 px-4 text-[0.95rem] font-medium"
+                "min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal"
               )}
             >
-              <Icon className="size-4.5 text-primary" />
-              {label}
+              <Icon className="size-4.5 shrink-0 text-primary" />
+              <span className="min-w-0 whitespace-normal">{label}</span>
             </a>
           ))}
 
@@ -85,11 +85,11 @@ export default function Home() {
             rel="noopener"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "h-12 justify-start gap-3 px-4 text-[0.95rem] font-medium"
+              "min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal"
             )}
           >
-            <FileText className="size-4.5" />
-            Resume
+            <FileText className="size-4.5 shrink-0" />
+            <span className="min-w-0 whitespace-normal">Resume</span>
           </a>
         </CardContent>
       </Card>
