@@ -14,7 +14,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Alejandro Valadez — Links",
-  description: "Portfolio, LinkedIn, GitHub, Instagram, TikTok, and resume — all in one place.",
+  description:
+    "Alejandro Valadez — student at the Illinois Mathematics and Science Academy. Portfolio, LinkedIn, GitHub, Instagram, TikTok, and resume — all in one place.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

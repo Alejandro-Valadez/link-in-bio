@@ -47,73 +47,77 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* IMSA brand palette — sampled from imsa.edu
+   #141155  primary navy-indigo (nav active, focus rings, headings)
+   #193769  secondary navy (links)
+   #01ACD7  cyan accent */
 :root {
-  --background: #FAFAFA;
-  --foreground: #09090B;
+  --background: #F7F9FC;
+  --foreground: #0B1020;
   --card: #FFFFFF;
-  --card-foreground: #09090B;
+  --card-foreground: #0B1020;
   --popover: #FFFFFF;
-  --popover-foreground: #09090B;
-  --primary: #2563EB;
+  --popover-foreground: #0B1020;
+  --primary: #141155;
   --primary-foreground: #FFFFFF;
-  --secondary: #18181B;
+  --secondary: #193769;
   --secondary-foreground: #FFFFFF;
-  --muted: #E8ECF0;
-  --muted-foreground: #475569;
-  --accent: #E8ECF0;
-  --accent-foreground: #18181B;
+  --muted: #E6EBF3;
+  --muted-foreground: #46536B;
+  --accent: #E6EBF3;
+  --accent-foreground: #141155;
   --destructive: #DC2626;
-  --border: #E4E4E7;
-  --input: #E4E4E7;
-  --ring: #2563EB;
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
+  --border: #D9E1EE;
+  --input: #D9E1EE;
+  --ring: #193769;
+  --chart-1: #141155;
+  --chart-2: #193769;
+  --chart-3: #2F5FA8;
+  --chart-4: #5B8FD6;
+  --chart-5: #01ACD7;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #F7F9FC;
+  --sidebar-foreground: #0B1020;
+  --sidebar-primary: #141155;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6EBF3;
+  --sidebar-accent-foreground: #141155;
+  --sidebar-border: #D9E1EE;
+  --sidebar-ring: #193769;
 }
 
 .dark {
-  --background: #09090B;
-  --foreground: #FAFAFA;
-  --card: #18181B;
-  --card-foreground: #FAFAFA;
-  --popover: #18181B;
-  --popover-foreground: #FAFAFA;
-  --primary: #3B82F6;
-  --primary-foreground: #09090B;
-  --secondary: #27272A;
-  --secondary-foreground: #FAFAFA;
-  --muted: #27272A;
-  --muted-foreground: #A1A1AA;
-  --accent: #27272A;
-  --accent-foreground: #FAFAFA;
+  --background: #070B18;
+  --foreground: #E8EDF7;
+  --card: #101A33;
+  --card-foreground: #E8EDF7;
+  --popover: #101A33;
+  --popover-foreground: #E8EDF7;
+  --primary: #7BA4E8;
+  --primary-foreground: #0A1024;
+  --secondary: #1E3A6B;
+  --secondary-foreground: #DCE6F8;
+  --muted: #17233F;
+  --muted-foreground: #A7B4CE;
+  --accent: #17233F;
+  --accent-foreground: #E8EDF7;
   --destructive: #EF4444;
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: #3B82F6;
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: #7BA4E8;
+  --chart-1: #7BA4E8;
+  --chart-2: #5B8FD6;
+  --chart-3: #2F5FA8;
+  --chart-4: #193769;
+  --chart-5: #01ACD7;
+  --sidebar: #101A33;
+  --sidebar-foreground: #E8EDF7;
+  --sidebar-primary: #7BA4E8;
+  --sidebar-primary-foreground: #0A1024;
+  --sidebar-accent: #17233F;
+  --sidebar-accent-foreground: #E8EDF7;
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: #7BA4E8;
 }
 
 @layer base {
@@ -122,6 +126,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(60rem 32rem at 50% -12rem, color-mix(in oklab, var(--primary) 16%, transparent), transparent 70%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;

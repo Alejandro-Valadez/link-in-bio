@@ -29,12 +29,12 @@ const LINKS = [
     icon: Code,
   },
   {
-    href: "https://instagram.com/f1alej",
+    href: "https://www.instagram.com/f1alej",
     label: "Instagram",
     icon: Camera,
   },
   {
-    href: "https://tiktok.com/@f1alej",
+    href: "https://www.tiktok.com/@f1alej",
     label: "TikTok",
     icon: Music2,
   },
@@ -52,9 +52,12 @@ export default function Home() {
           </Avatar>
           <div className="space-y-2">
             <h1 className="font-heading text-lg font-bold">Alejandro Valadez</h1>
+            <p className="text-sm text-muted-foreground">
+              Illinois Mathematics &amp; Science Academy
+            </p>
             <div className="flex flex-wrap justify-center gap-1.5">
-              <Badge variant="secondary">Jones College Prep</Badge>
-              <Badge variant="secondary">IMSA PROMISE</Badge>
+              <Badge variant="secondary">IMSA &apos;29</Badge>
+              <Badge variant="secondary">Aurora, IL</Badge>
             </div>
           </div>
         </CardHeader>
@@ -71,7 +74,7 @@ export default function Home() {
                 "h-12 justify-start gap-3 px-4 text-[0.95rem] font-medium"
               )}
             >
-              <Icon className="size-4.5 text-muted-foreground" />
+              <Icon className="size-4.5 text-primary" />
               {label}
             </a>
           ))}
