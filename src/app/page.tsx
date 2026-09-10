@@ -8,6 +8,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -58,6 +59,18 @@ export default function Home() {
         <div className="stars stars-sm" />
         <div className="stars stars-md" />
         <div className="stars stars-lg" />
+        <div
+          className="shooting-star"
+          style={{ "--x": "78%", "--y": "12%", "--duration": "7s", "--delay": "0s" } as CSSProperties}
+        />
+        <div
+          className="shooting-star"
+          style={{ "--x": "35%", "--y": "6%", "--duration": "9.5s", "--delay": "-3.2s" } as CSSProperties}
+        />
+        <div
+          className="shooting-star"
+          style={{ "--x": "92%", "--y": "38%", "--duration": "12s", "--delay": "-7s" } as CSSProperties}
+        />
         <div className="exhaust" />
       </div>
 

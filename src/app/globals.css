@@ -163,6 +163,12 @@
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: none; }
 }
+@keyframes shoot {
+  0%   { transform: translate3d(0, 0, 0) rotate(-35deg) scaleX(0); opacity: 0; }
+  4%   { transform: translate3d(0, 0, 0) rotate(-35deg) scaleX(1); opacity: 1; }
+  18%  { transform: translate3d(-320px, 220px, 0) rotate(-35deg) scaleX(1); opacity: 0; }
+  100% { transform: translate3d(-320px, 220px, 0) rotate(-35deg) scaleX(0); opacity: 0; }
+}
 
 .sky {
   position: fixed;
@@ -199,19 +205,19 @@
   width: 1px;
   height: 1px;
   box-shadow: 512px 530px 0 rgba(214,228,255,0.58), 590px 851px 0 rgba(214,228,255,0.55), 80px 531px 0 rgba(214,228,255,0.58), 450px 480px 0 rgba(214,228,255,0.71), 420px 670px 0 rgba(214,228,255,0.62), 161px 179px 0 rgba(214,228,255,0.40), 396px 377px 0 rgba(214,228,255,0.57), 127px 597px 0 rgba(214,228,255,0.57), 418px 844px 0 rgba(214,228,255,0.69), 769px 318px 0 rgba(214,228,255,0.59), 252px 56px 0 rgba(214,228,255,0.66), 978px 297px 0 rgba(214,228,255,0.33), 744px 347px 0 rgba(214,228,255,0.55), 577px 846px 0 rgba(214,228,255,0.33), 850px 820px 0 rgba(214,228,255,0.46), 25px 77px 0 rgba(214,228,255,0.71), 497px 526px 0 rgba(214,228,255,0.40), 502px 734px 0 rgba(214,228,255,0.30), 644px 45px 0 rgba(214,228,255,0.49), 635px 984px 0 rgba(214,228,255,0.49), 466px 353px 0 rgba(214,228,255,0.28), 733px 419px 0 rgba(214,228,255,0.67), 300px 555px 0 rgba(214,228,255,0.44), 842px 160px 0 rgba(214,228,255,0.32), 630px 624px 0 rgba(214,228,255,0.32), 369px 378px 0 rgba(214,228,255,0.77), 853px 630px 0 rgba(214,228,255,0.48), 919px 587px 0 rgba(214,228,255,0.49), 308px 515px 0 rgba(214,228,255,0.25), 881px 302px 0 rgba(214,228,255,0.47), 123px 80px 0 rgba(214,228,255,0.66), 545px 514px 0 rgba(214,228,255,0.31), 560px 622px 0 rgba(214,228,255,0.74), 961px 598px 0 rgba(214,228,255,0.58), 573px 487px 0 rgba(214,228,255,0.30), 652px 651px 0 rgba(214,228,255,0.80), 711px 135px 0 rgba(214,228,255,0.33), 647px 972px 0 rgba(214,228,255,0.44), 926px 377px 0 rgba(214,228,255,0.67), 654px 71px 0 rgba(214,228,255,0.41), 664px 492px 0 rgba(214,228,255,0.60), 225px 718px 0 rgba(214,228,255,0.42), 92px 554px 0 rgba(214,228,255,0.46), 181px 817px 0 rgba(214,228,255,0.76), 751px 5px 0 rgba(214,228,255,0.49), 850px 569px 0 rgba(214,228,255,0.64), 629px 1px 0 rgba(214,228,255,0.52), 491px 163px 0 rgba(214,228,255,0.69), 64px 85px 0 rgba(214,228,255,0.80), 613px 704px 0 rgba(214,228,255,0.71), 919px 982px 0 rgba(214,228,255,0.28), 168px 596px 0 rgba(214,228,255,0.47), 417px 533px 0 rgba(214,228,255,0.28), 61px 463px 0 rgba(214,228,255,0.40), 417px 726px 0 rgba(214,228,255,0.48), 338px 589px 0 rgba(214,228,255,0.45), 975px 297px 0 rgba(214,228,255,0.50), 245px 684px 0 rgba(214,228,255,0.42), 562px 643px 0 rgba(214,228,255,0.25), 131px 165px 0 rgba(214,228,255,0.70), 136px 817px 0 rgba(214,228,255,0.36), 632px 826px 0 rgba(214,228,255,0.66), 812px 100px 0 rgba(214,228,255,0.30), 744px 216px 0 rgba(214,228,255,0.31), 343px 97px 0 rgba(214,228,255,0.74), 639px 721px 0 rgba(214,228,255,0.57), 756px 707px 0 rgba(214,228,255,0.46), 764px 227px 0 rgba(214,228,255,0.36), 139px 625px 0 rgba(214,228,255,0.25), 564px 966px 0 rgba(214,228,255,0.73), 520px 876px 0 rgba(214,228,255,0.28), 528px 768px 0 rgba(214,228,255,0.39), 983px 139px 0 rgba(214,228,255,0.73), 472px 927px 0 rgba(214,228,255,0.79), 389px 463px 0 rgba(214,228,255,0.49), 99px 188px 0 rgba(214,228,255,0.30), 88px 937px 0 rgba(214,228,255,0.55), 571px 232px 0 rgba(214,228,255,0.76), 77px 836px 0 rgba(214,228,255,0.40), 63px 442px 0 rgba(214,228,255,0.46), 140px 372px 0 rgba(214,228,255,0.32), 897px 579px 0 rgba(214,228,255,0.50), 993px 348px 0 rgba(214,228,255,0.56), 544px 259px 0 rgba(214,228,255,0.53), 945px 302px 0 rgba(214,228,255,0.51), 407px 127px 0 rgba(214,228,255,0.38), 632px 21px 0 rgba(214,228,255,0.30), 741px 160px 0 rgba(214,228,255,0.37), 432px 783px 0 rgba(214,228,255,0.58), 605px 675px 0 rgba(214,228,255,0.46);
-  animation: star-fall 150s linear infinite;
+  animation: star-fall 60s linear infinite, twinkle 4s ease-in-out infinite;
 }
 .stars-md {
   width: 2px;
   height: 2px;
   box-shadow: 622px 237px 0 rgba(200,220,255,0.37), 205px 365px 0 rgba(200,220,255,0.74), 445px 673px 0 rgba(200,220,255,0.66), 17px 107px 0 rgba(200,220,255,0.32), 183px 498px 0 rgba(200,220,255,0.33), 552px 224px 0 rgba(200,220,255,0.56), 781px 666px 0 rgba(200,220,255,0.68), 102px 664px 0 rgba(200,220,255,0.48), 5px 48px 0 rgba(200,220,255,0.60), 464px 172px 0 rgba(200,220,255,0.39), 816px 110px 0 rgba(200,220,255,0.41), 45px 293px 0 rgba(200,220,255,0.41), 128px 324px 0 rgba(200,220,255,0.46), 121px 3px 0 rgba(200,220,255,0.49), 54px 797px 0 rgba(200,220,255,0.59), 37px 119px 0 rgba(200,220,255,0.54), 261px 826px 0 rgba(200,220,255,0.36), 417px 670px 0 rgba(200,220,255,0.50), 897px 419px 0 rgba(200,220,255,0.36), 274px 429px 0 rgba(200,220,255,0.65), 524px 605px 0 rgba(200,220,255,0.73), 122px 351px 0 rgba(200,220,255,0.67), 110px 50px 0 rgba(200,220,255,0.44), 787px 479px 0 rgba(200,220,255,0.73), 399px 122px 0 rgba(200,220,255,0.25), 615px 560px 0 rgba(200,220,255,0.45), 394px 296px 0 rgba(200,220,255,0.33), 830px 177px 0 rgba(200,220,255,0.52), 144px 955px 0 rgba(200,220,255,0.45), 563px 894px 0 rgba(200,220,255,0.42), 707px 405px 0 rgba(200,220,255,0.56), 241px 910px 0 rgba(200,220,255,0.49), 994px 534px 0 rgba(200,220,255,0.45), 665px 87px 0 rgba(200,220,255,0.55), 39px 598px 0 rgba(200,220,255,0.39), 487px 564px 0 rgba(200,220,255,0.68), 496px 465px 0 rgba(200,220,255,0.37), 9px 456px 0 rgba(200,220,255,0.40), 603px 428px 0 rgba(200,220,255,0.74), 616px 738px 0 rgba(200,220,255,0.60), 998px 425px 0 rgba(200,220,255,0.69), 82px 330px 0 rgba(200,220,255,0.52), 525px 711px 0 rgba(200,220,255,0.64), 661px 708px 0 rgba(200,220,255,0.50);
-  animation: star-fall 95s linear infinite;
+  animation: star-fall 38s linear infinite, twinkle 5s ease-in-out infinite -1.5s;
 }
 .stars-lg {
   width: 3px;
   height: 3px;
   box-shadow: 551px 739px 0 rgba(255,255,255,0.59), 16px 447px 0 rgba(255,255,255,0.70), 266px 592px 0 rgba(255,255,255,0.68), 963px 322px 0 rgba(255,255,255,0.69), 227px 819px 0 rgba(255,255,255,0.72), 628px 570px 0 rgba(255,255,255,0.32), 81px 275px 0 rgba(255,255,255,0.71), 231px 730px 0 rgba(255,255,255,0.56), 556px 622px 0 rgba(255,255,255,0.71), 672px 421px 0 rgba(255,255,255,0.63), 877px 699px 0 rgba(255,255,255,0.45), 897px 848px 0 rgba(255,255,255,0.55), 571px 130px 0 rgba(255,255,255,0.47), 234px 518px 0 rgba(255,255,255,0.71), 155px 913px 0 rgba(255,255,255,0.74), 911px 609px 0 rgba(255,255,255,0.74);
-  animation: star-fall 60s linear infinite, twinkle 6s ease-in-out infinite;
+  animation: star-fall 22s linear infinite, twinkle 3s ease-in-out infinite -0.7s;
 }
 
 /* Exhaust bloom beneath the card -- cyan is the IMSA accent, and reads as
@@ -240,12 +246,36 @@
   animation: rise-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Shooting stars -- a rotated gradient bar that scales in from a point,
+   streaks across, and fades, then sits invisible for the rest of its
+   (staggered, per-star) cycle before looping. */
+.shooting-star {
+  position: absolute;
+  top: var(--y, 20%);
+  left: var(--x, 80%);
+  width: 90px;
+  height: 2px;
+  transform-origin: right center;
+  border-radius: 999px;
+  background: linear-gradient(-90deg, #fff, rgba(255, 255, 255, 0));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85));
+  opacity: 0;
+  animation: shoot var(--duration, 7s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stars,
+  .stars-sm,
+  .stars-md,
   .stars-lg,
   .exhaust,
+  .shooting-star,
   .rise-in {
     animation: none;
+  }
+  .shooting-star {
+    opacity: 0;
   }
   .rise-in {
     opacity: 1;
