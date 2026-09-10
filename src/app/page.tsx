@@ -5,14 +5,23 @@ import {
   Camera,
   Music2,
   FileText,
+  type LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const LINKS = [
+type LinkItem = {
+  href: string;
+  label: string;
+  note?: string;
+  icon: LucideIcon;
+};
+
+const LINKS: LinkItem[] = [
   {
     href: "https://portfolio-site-omega-two-79.vercel.app",
     label: "Portfolio",
@@ -20,12 +29,14 @@ const LINKS = [
   },
   {
     href: "https://www.linkedin.com/in/alejandro-valadez",
-    label: "Connect with me!",
+    label: "LinkedIn",
+    note: "Connect with me!",
     icon: Briefcase,
   },
   {
     href: "https://github.com/f1alej",
-    label: "Check out my MCPs and Projects",
+    label: "Github",
+    note: "Check out my MCPs!",
     icon: Code,
   },
   {
@@ -34,7 +45,7 @@ const LINKS = [
     icon: Camera,
   },
   {
-    href: "https://www.tiktok.com/@f1alej",
+    href: "https://www.tiktok.com/@f1alej?_r=1&_t=ZT-99RIok6wpCA",
     label: "TikTok",
     icon: Music2,
   },
@@ -42,8 +53,15 @@ const LINKS = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-6 py-16">
-      <Card className="w-full max-w-sm border-border/80 shadow-sm">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-6 px-6 py-16">
+      <div className="sky" aria-hidden>
+        <div className="stars stars-sm" />
+        <div className="stars stars-md" />
+        <div className="stars stars-lg" />
+        <div className="exhaust" />
+      </div>
+
+      <Card className="rise-in w-full max-w-sm border-border/80 shadow-sm">
         <CardHeader className="flex flex-col items-center gap-4 text-center">
           <Avatar className="size-20 border border-border">
             <AvatarFallback className="bg-secondary font-heading text-lg text-secondary-foreground">
@@ -63,19 +81,26 @@ export default function Home() {
         </CardHeader>
 
         <CardContent className="flex flex-col gap-2.5">
-          {LINKS.map(({ href, label, icon: Icon }) => (
+          {LINKS.map(({ href, label, note, icon: Icon }, i) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener"
+              style={{ animationDelay: `${120 + i * 70}ms` }}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal"
+                "rise-in min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal",
+                "hover:-translate-y-0.5"
               )}
             >
               <Icon className="size-4.5 shrink-0 text-primary" />
               <span className="min-w-0 whitespace-normal">{label}</span>
+              {note ? (
+                <span className="ml-auto pl-3 text-right text-xs whitespace-normal text-muted-foreground italic">
+                  {note}
+                </span>
+              ) : null}
             </a>
           ))}
 
@@ -83,9 +108,11 @@ export default function Home() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener"
+            style={{ animationDelay: `${120 + LINKS.length * 70}ms` }}
             className={cn(
               buttonVariants({ size: "lg" }),
-              "min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal"
+              "rise-in min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal",
+              "hover:-translate-y-0.5"
             )}
           >
             <FileText className="size-4.5 shrink-0" />
@@ -94,9 +121,23 @@ export default function Home() {
         </CardContent>
       </Card>
 
-      <p className="fixed bottom-6 text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} Alejandro Valadez
-      </p>
+      <footer className="flex flex-col items-center gap-2 text-sm text-muted-foreground">
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          <Link
+            href="/privacy"
+            className="underline-offset-2 hover:text-foreground hover:underline"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="/terms"
+            className="underline-offset-2 hover:text-foreground hover:underline"
+          >
+            Terms of Use
+          </Link>
+        </nav>
+        <p>&copy; {new Date().getFullYear()} Alejandro Valadez</p>
+      </footer>
     </main>
   );
 }
