@@ -75,7 +75,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-1.5">
               <Badge variant="secondary">IMSA &apos;29</Badge>
-              <Badge variant="secondary">Aurora, IL</Badge>
+              <Badge variant="secondary">Chicago, IL</Badge>
             </div>
           </div>
         </CardHeader>
