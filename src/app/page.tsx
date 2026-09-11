@@ -2,13 +2,13 @@ import {
   Globe,
   Briefcase,
   Code,
-  Camera,
-  Music2,
+  ThumbsUp,
   FileText,
   type LucideIcon,
 } from "lucide-react";
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { EmailLink } from "@/components/email-link";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -41,14 +41,9 @@ const LINKS: LinkItem[] = [
     icon: Code,
   },
   {
-    href: "https://www.instagram.com/f1alej",
-    label: "Instagram",
-    icon: Camera,
-  },
-  {
-    href: "https://www.tiktok.com/@f1alej?_r=1&_t=ZT-99RIok6wpCA",
-    label: "TikTok",
-    icon: Music2,
+    href: "https://www.facebook.com/f1alej",
+    label: "Facebook",
+    icon: ThumbsUp,
   },
 ];
 
@@ -117,11 +112,13 @@ export default function Home() {
             </a>
           ))}
 
+          <EmailLink style={{ animationDelay: `${120 + LINKS.length * 70}ms` }} />
+
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener"
-            style={{ animationDelay: `${120 + LINKS.length * 70}ms` }}
+            style={{ animationDelay: `${120 + (LINKS.length + 1) * 70}ms` }}
             className={cn(
               buttonVariants({ size: "lg" }),
               "rise-in min-h-12 justify-start gap-3 px-4 py-2.5 text-left text-sm leading-snug font-medium whitespace-normal",
