@@ -35,7 +35,7 @@ const LINKS: LinkItem[] = [
     icon: Briefcase,
   },
   {
-    href: "https://github.com/f1alej",
+    href: "https://github.com/Alejandro-Valadez",
     label: "Github",
     note: "Check out my MCPs!",
     icon: Code,
