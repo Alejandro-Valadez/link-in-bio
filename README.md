@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# link-in-bio
 
-## Getting Started
+My link-in-bio page: **[link-in-bio-beta-ten.vercel.app](https://link-in-bio-beta-ten.vercel.app)**
 
-First, run the development server:
+One page with links to my portfolio, LinkedIn, GitHub, Facebook, and resume, set on an animated night sky. Short privacy and terms pages live at `/privacy` and `/terms`.
+
+## Stack
+
+- Next.js 16 (App Router), React 19, TypeScript
+- Tailwind CSS 4 with shadcn/ui components and Lucide icons
+- Hosted on Vercel, with Vercel Web Analytics
+
+## Run it locally
+
+Needs Node.js 20+ and npm.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Alejandro-Valadez/link-in-bio.git
+cd link-in-bio
+npm install
+npm run dev       # http://localhost:3000
+npm run build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit the links
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All links are in the `LINKS` array at the top of `src/app/page.tsx`. Each entry takes an `href`, a `label`, an optional `note`, and a Lucide icon. The resume is `public/resume.pdf`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+My full portfolio is at [alejandrovaladez.me](https://alejandrovaladez.me).
