@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
 
 const archivo = Archivo({
   variable: "--font-heading",
@@ -25,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`dark ${archivo.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}<Analytics />
+      <body className="min-h-full flex flex-col">{children}
       </body>
     </html>
   );
